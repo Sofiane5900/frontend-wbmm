@@ -1,4 +1,3 @@
-// src/mockData/users.ts
 export interface User {
   username: string;
   password: string;
@@ -6,6 +5,8 @@ export interface User {
   matchesPlayed: number;
   wins: number;
   losses: number;
+  KD: number;
+  MMR: number;
   rank: string;
 }
 
@@ -17,6 +18,8 @@ export const mockUsers: User[] = [
     matchesPlayed: 50,
     wins: 30,
     losses: 20,
+    MMR: 1500,
+    KD: 1.5,
     rank: "Gold",
   },
   {
@@ -26,6 +29,8 @@ export const mockUsers: User[] = [
     matchesPlayed: 30,
     wins: 20,
     losses: 10,
+    MMR: 1400,
+    KD: 2.0,
     rank: "Silver",
   },
 ];
