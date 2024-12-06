@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
-import { mockUsers } from "../mockData/users";
+import { mockUsers } from "./../mockData/users";
 
 type User = {
   username: string;
   password: string;
   profilePicture: string;
+  rank: string;
   matchesPlayed: number;
   wins: number;
   losses: number;
   KD: number;
   MMR: number;
-  rank: string;
-
 };
 
 export const useAuth = () => {
@@ -25,6 +24,7 @@ export const useAuth = () => {
   }, []);
 
   const login = (username: string, password: string) => {
+    // Assume user exists in mockUsers
     const foundUser = mockUsers.find(
       (user) => user.username === username && user.password === password
     );

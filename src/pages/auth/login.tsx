@@ -1,27 +1,30 @@
-// src/pages/auth/login.tsx
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { mockUsers } from "../../mockData/users";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { login, user } = useAuth();
   const router = useRouter();
+
+  // If already logged in, redirect to the home page
+  useEffect(() => {
+    if (user) {
+      router.push("/"); // Redirect to home if already logged in
+    }
+  }, [user, router]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const user = mockUsers.find((user) => user.username === username && user.password === password);
+    const loggedIn = login(username, password);
 
-    if (user) {
-      // We set the user in localStorage for simulating a logged user 
-      localStorage.setItem("loggedInUser", JSON.stringify(user));
-
-      // Redirect to home page
-      router.push("/home");
+    if (!loggedIn) {
+      setError("Invalid username or password");
     } else {
-      setError("Invalid username or password.");
+      router.push("/"); // Redirect to home page after successful login
     }
   };
 
@@ -31,12 +34,16 @@ const Login = () => {
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
+          id="username"
+          name="username"
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
+          id="password"
+          name="password"
           type="password"
           placeholder="Password"
           value={password}
