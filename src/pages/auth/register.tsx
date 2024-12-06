@@ -34,9 +34,9 @@ const Register = () => {
     mockUsers.push(newUser); // We simulate adding an user to the DB here
 
     console.log("Registered:", newUser);
-    setError(""); // Clear error if successful
+    setError("");
 
-    // Redirect to login page after successful registration
+    // Redirect to login page after registering 
     router.push("/auth/login");
   };
 

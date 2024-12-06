@@ -1,7 +1,7 @@
 // src/pages/auth/login.tsx
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { mockUsers, User } from "../../mockData/users";
+import { mockUsers } from "../../mockData/users";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -12,25 +12,17 @@ const Login = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Check if the username exists in the mock data
-    const user = mockUsers.find((user: User) => user.username === username);
+    const user = mockUsers.find((user) => user.username === username && user.password === password);
 
-    if (!user) {
-      setError("User not found.");
-      return;
+    if (user) {
+      // We set the user in localStorage for simulating a logged user 
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+      // Redirect to home page
+      router.push("/home");
+    } else {
+      setError("Invalid username or password.");
     }
-
-    // Check if the password matches
-    if (user.password !== password) {
-      setError("Incorrect password.");
-      return;
-    }
-
-    // If login is successful, clear error and redirect to a new page (for now, we'll just log the success)
-    console.log("Logged in:", user);
-    setError(""); // Clear error if successful
-    // Redirect to home or dashboard after successful login
-    router.push("/home"); // You can change this route as needed
   };
 
   return (
