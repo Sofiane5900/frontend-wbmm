@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center text-white fade-in">
       <div className="mb-6">
         <h1 className="text-5xl text-yellow-400 text-center mt-4">
           Warlords Matchmaking

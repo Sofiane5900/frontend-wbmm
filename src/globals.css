@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts */
 @font-face {
   font-family: "Boheld";
   src: url("./fonts/Boheld.otf") format("opentype");
@@ -12,6 +13,7 @@
   src: url("./fonts/Play-Regular.ttf") format("truetype");
 }
 
+/* Theme */
 :root {
   --background: #171717;
   --foreground: #171717;
@@ -24,6 +26,7 @@
   }
 }
 
+/* Typo */
 body {
   color: var(--foreground);
   background: var(--background);
@@ -47,4 +50,19 @@ span {
 
 input {
   font-family: "Play-Regular";
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 500ms ease-out;
 }
