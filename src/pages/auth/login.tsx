@@ -29,12 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center text-white"
-      style={{
-        background: "linear-gradient(180deg, #2c2c2c, #1e1e1e)",
-      }}
-    >
+    <div className="min-h-screen flex flex-col items-center justify-center text-white">
       <div className="mb-6">
         <h1 className="text-5xl text-yellow-400 text-center mt-4">
           Warlords Matchmaking
@@ -45,8 +40,8 @@ const Login = () => {
       </div>
 
       <div
-        className="w-full max-w-md p-8 rounded-lg border-2 border-yellow-600/50 shadow-lg"
-        style={{ backgroundColor: "#454444" }}
+        className="w-full max-w-md p-8 rounded-lg border-2 border-yellow-400 shadow-lg"
+        style={{ backgroundColor: "#161616" }}
       >
         {error && (
           <p className="text-center text-red-500 text-lg mb-4">{error}</p>
@@ -56,7 +51,7 @@ const Login = () => {
           <div className="space-y-2">
             <label
               htmlFor="username"
-              className="block text-lg font-medium text-yellow-300"
+              className="block text-lg font-medium text-white"
             >
               Username
             </label>
@@ -67,14 +62,16 @@ const Login = () => {
               placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 text-gray-800 bg-yellow-50 rounded-lg border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-4 py-2 text-white rounded-lg border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              style={{ backgroundColor: "#303030" }}
+              required={true}
             />
           </div>
           {/* Password */}
           <div className="space-y-2">
             <label
               htmlFor="password"
-              className="block text-lg font-medium text-yellow-300"
+              className="block text-lg font-medium text-white"
             >
               Password
             </label>
@@ -85,14 +82,16 @@ const Login = () => {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 text-gray-800 bg-yellow-50 rounded-lg border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-4 py-2 text-white  rounded-lg border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              style={{ backgroundColor: "#303030" }}
+              required={true}
             />
           </div>
           {/* Submit  */}
           <button
             type="submit"
             className="w-full py-3 px-4 bg-yellow-400 hover:bg-yellow-500 
-                       text-gray-900 font-bold rounded-lg shadow-lg
+                       text-gray-800 font-bold rounded-lg shadow-lg
                        focus:outline-none focus:ring-2 focus:ring-yellow-400 
                        focus:ring-offset-2 focus:ring-offset-gray-800
                        transition duration-200 text-sm uppercase tracking-wider"

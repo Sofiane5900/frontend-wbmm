@@ -7,15 +7,20 @@
   src: url("./fonts/Boheld.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Play-Regular";
+  src: url("./fonts/Play-Regular.ttf") format("truetype");
+}
+
 :root {
-  --background: #2c2c2c;
-  --foreground: #2c2c2c;
+  --background: #171717;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2c2c2c;
-    --foreground: #2c2c2c;
+    --background: #0a0a0a;
+    --foreground: #171717;
   }
 }
 
@@ -26,4 +31,20 @@ body {
 
 h1 {
   font-family: "Boheld";
+}
+
+p {
+  font-family: "Play-Regular";
+}
+
+label {
+  font-family: "Play-Regular";
+}
+
+span {
+  font-family: "Play-Regular";
+}
+
+input {
+  font-family: "Play-Regular";
 }
