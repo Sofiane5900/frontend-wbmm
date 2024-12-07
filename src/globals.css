@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: 'Boheld';
+  src: url("./fonts/Boheld.otf") format("opentype"); 
+}
+
+
+:root {
+  --background: #2c2c2c;
+  --foreground: #2c2c2c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2c2c2c;
+    --foreground: #2c2c2c;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+h1 {
+  font-family: 'Boheld';
+}
