@@ -5,6 +5,12 @@ const Home = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
+
+  function logOut() {
+    localStorage.removeItem("loggedInUser");
+    router.push("/auth/login");
+  }
+
   useEffect(() => {
     // Check if a user is logged in by checking localStorage
     const loggedInUser = localStorage.getItem("loggedInUser");
@@ -19,12 +25,13 @@ const Home = () => {
   }, [router]);
 
   if (loading) {
-    return <div>Loading...</div>; // Display a loading state while checking localStorage
+    return <div>Loading...</div>; // We'll replace this with a loading spinner 
   }
 
   return (
     <div>
       <h1>Welcome to the Dashboard!</h1>
+      <button onClick={logOut}>Log Out</button>
       <button onClick={() => router.push("/play")}>Play</button>
       <button onClick={() => router.push("/profile")}>Profile</button>
       <button onClick={() => router.push("/leaderboards")}>Leaderboards</button>
