@@ -5,7 +5,6 @@ const Home = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
-
   function logOut() {
     localStorage.removeItem("loggedInUser");
     router.push("/auth/login");
@@ -25,7 +24,7 @@ const Home = () => {
   }, [router]);
 
   if (loading) {
-    return <div>Loading...</div>; // We'll replace this with a loading spinner 
+    return <div>Loading...</div>; // We'll replace this with a loading spinner
   }
 
   return (

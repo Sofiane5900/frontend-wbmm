@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import { User } from "./../mockData/users";
 
 const Profile = () => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
   useEffect(() => {
     // Check if the user is logged in by looking in localStorage
     const storedUser = localStorage.getItem("loggedInUser");
-    
+
     if (!storedUser) {
       // If no user is found, redirect to login
       router.push("/auth/login");
@@ -26,7 +28,12 @@ const Profile = () => {
     <div className="profile-container">
       <h1>Profile</h1>
       <div className="profile-details">
-        <img src={user.profilePicture} alt="Profile Picture" width={150} height={150} />
+        <Image
+          src={user.profilePicture}
+          alt="Profile Picture"
+          width={150}
+          height={150}
+        />
         <h2>{user.username}</h2>
         <p>Rank: {user.rank}</p>
         <p>MMR: {user.MMR}</p>

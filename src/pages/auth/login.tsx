@@ -119,7 +119,7 @@ const Login = () => {
           href="https://discord.gg/W7r8DkdqxQ"
           target="_blank"
           rel="noopener noreferrer"
-           className="flex items-center justify-center text-yellow-400 
+          className="flex items-center justify-center text-yellow-400 
                      hover:text-yellow-300 transition duration-200 gap-2"
         >
           <FaDiscord className="text-2xl mr-2" /> Join the Discord!

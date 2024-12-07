@@ -1,5 +1,5 @@
 // src/layout.tsx
-import "./globals.css";  // Ensure the correct path
+import "./globals.css"; // Ensure the correct path
 import { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -24,7 +24,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
