@@ -52,6 +52,10 @@ input {
   font-family: "Play-Regular";
 }
 
+h2 {
+  font-family: "Play-Regular";
+}
+
 /* Animations */
 
 @keyframes fadeIn {

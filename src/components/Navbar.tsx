@@ -1,55 +1,76 @@
 import React from "react";
 import { useRouter } from "next/router";
+import {
+  AiOutlinePlayCircle,
+  AiOutlineUser,
+  AiOutlineTrophy,
+} from "react-icons/ai";
+import { FaCrown } from "react-icons/fa";
+import { MdLogout } from "react-icons/md";
+import Image from "next/image";
 
 export const Navbar = () => {
+  const router = useRouter();
+
   function logOut() {
     localStorage.removeItem("loggedInUser");
     router.push("/auth/login");
   }
 
-  const router = useRouter();
   return (
     <div>
       <nav
-        className="flex justify-between items-center px-8 py-4  shadow-lg"
+        className="flex justify-between items-center px-6 py-4 shadow-lg"
         style={{ background: "#161616" }}
       >
-        <h1 className="text-3xl font-bold text-yellow-300">
-          Warlords Matchmaking
-        </h1>
-        <nav className="flex space-x-4">
+        {/* Title Section */}
+        <div
+          className="flex items-baseline space-x-2 cursor-pointer"
+          onClick={() => router.push("/")}
+        >
+          <h1 className="text-yellow-400 text-2xl font-bold">
+            Warband Matchmaking
+          </h1>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-6 text-white">
           <button
             onClick={() => router.push("/play")}
-            className="hover:text-yellow-200 transition"
+            className={`flex items-center space-x-2 hover:text-yellow-300 transition ${
+              router.pathname === "/play" ? "text-yellow-300" : ""
+            }`}
           >
-            Play
+            <AiOutlinePlayCircle size={20} />
+            <span>Play</span>
           </button>
           <button
             onClick={() => router.push("/profile")}
-            className="hover:text-yellow-200 transition"
+            className={`flex items-center space-x-2 hover:text-yellow-300 transition ${
+              router.pathname === "/profile" ? "text-yellow-300" : ""
+            }`}
           >
-            Profile
+            <AiOutlineUser size={20} />
+            <span>Profile</span>
           </button>
           <button
             onClick={() => router.push("/leaderboards")}
-            className="hover:text-yellow-200 transition"
+            className={`flex items-center space-x-2 hover:text-yellow-300 transition ${
+              router.pathname === "/leaderboards" ? "text-yellow-300" : ""
+            }`}
           >
-            Leaderboards
-          </button>
-          <button
-            onClick={() => router.push("/about")}
-            className="hover:text-yellow-200 transition"
-          >
-            About
+            <FaCrown size={20} />
+            <span>Leaderboards</span>
           </button>
 
           <button
             onClick={logOut}
-            className="bg-red-600 hover:bg-red-500 text-white py-3 px-6 rounded-md shadow-md transition"
+            className="flex items-center space-x-2 text-red-500 hover:text-red-400 transition"
           >
-            Log Out
+            <MdLogout size={20} />
+            <span>Log Out</span>
           </button>
-        </nav>
+        </div>
       </nav>
     </div>
   );
