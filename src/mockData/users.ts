@@ -5,6 +5,9 @@ export interface User {
   matchesPlayed: number;
   wins: number;
   losses: number;
+  online_users?: number;
+  battles?: number;
+  groupfights?: number;
   KD: number;
   MMR: number;
   rank: string;
