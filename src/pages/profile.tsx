@@ -1,47 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import { User } from "./../mockData/users";
-
 const Profile = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    // Check if the user is logged in by looking in localStorage
-    const storedUser = localStorage.getItem("loggedInUser");
-
-    if (!storedUser) {
-      // If no user is found, redirect to login
-      router.push("/auth/login");
-    } else {
-      // If a user is found, parse the stored user data
-      setUser(JSON.parse(storedUser));
-    }
-  }, [router]);
-
-  if (!user) {
-    return <div>Loading...</div>; // Display loading until user data is fetched
-  }
-
   return (
-    <div className="profile-container">
-      <h1>Profile</h1>
-      <div className="profile-details">
-        <Image
-          src={user.profilePicture}
-          alt="Profile Picture"
-          width={150}
-          height={150}
-        />
-        <h2>{user.username}</h2>
-        <p>Rank: {user.rank}</p>
-        <p>MMR: {user.MMR}</p>
-        <p>Matches Played: {user.matchesPlayed}</p>
-        <p>Wins: {user.wins}</p>
-        <p>Losses: {user.losses}</p>
-        <p>K/D: {user.KD}</p>
-      </div>
+    <div className="flex items-center justify-center h-screen text-yellow-500">
+      <h3>Coming soon</h3>
     </div>
   );
 };

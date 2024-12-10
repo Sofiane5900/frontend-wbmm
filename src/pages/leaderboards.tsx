@@ -1,0 +1,11 @@
+import React from "react";
+
+const Leaderboards = () => {
+  return (
+    <div className="flex items-center justify-center h-screen text-yellow-500">
+      <h3>Coming soon</h3>
+    </div>
+  );
+};
+
+export default Leaderboards;
