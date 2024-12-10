@@ -27,7 +27,7 @@ const Play = () => {
   };
 
   return (
-    <div className="h-full w-full  text-white">
+    <div className="fade-in h-full w-full  text-white">
       <Navbar />
       {!isMatchStarted ? (
         <div className="flex  flex-col items-center  to-black p-10 min-h-screen">
@@ -54,7 +54,7 @@ const Play = () => {
           </button>
         </div>
       ) : (
-        <div className="p-8">
+        <div className="p-8 fade-in">
           <div className="bg-gradient-to-r from-green-500 via-blue-600 to-purple-500 p-6 rounded-lg shadow-lg text-center mb-8">
             <h1 className="text-4xl font-extrabold">{server}</h1>
             <h2>{map}</h2>
