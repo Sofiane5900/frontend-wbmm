@@ -1,5 +1,4 @@
 import React from "react";
-import { User } from "../mockData/users";
 
 export const ProfileCard = () => {
   const user = localStorage.getItem("loggedInUser")

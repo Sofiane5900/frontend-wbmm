@@ -1,9 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { User } from "./../mockData/users";
-import Image from "next/image";
-import { Sidebar } from "@/components/Sidebar";
 import { Footer } from "@/components/Footer";
 import { WelcomeHeader } from "@/components/WelcomeHeader";
 import { ProfileCard } from "@/components/ProfileCard";
@@ -14,10 +11,6 @@ import { RanksCard } from "@/components/RanksCard";
 const Home = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const loggedInUser = localStorage.getItem("loggedInUser");
-  const user = localStorage.getItem("loggedInUser")
-    ? JSON.parse(localStorage.getItem("loggedInUser")!)
-    : null;
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedInUser");

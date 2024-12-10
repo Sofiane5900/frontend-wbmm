@@ -16,7 +16,7 @@ export const TournamentCard = () => {
           className="w-full rounded-md mb-4"
         />
         <p className="text-gray-300 text-sm text-center">
-          Don't miss the action! Join the{" "}
+          Don&apos;t miss the action! Join the{" "}
           <span className="text-yellow-400 font-bold">
             Warlords Groupfighting League
           </span>{" "}

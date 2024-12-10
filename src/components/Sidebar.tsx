@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import {
   FaBars,
@@ -10,7 +10,6 @@ import {
   FaUsers,
   FaUser,
 } from "react-icons/fa";
-import { User } from "./../mockData/users";
 
 export const Sidebar = () => {
   const router = useRouter();

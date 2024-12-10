@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+
 const Profile = () => {
   return (
     <div className="flex items-center justify-center h-screen text-yellow-500">

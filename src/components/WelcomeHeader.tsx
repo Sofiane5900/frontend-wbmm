@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export const WelcomeHeader = () => {
   const [user, setUser] = useState<User | null>(null);
-  const loggedInUser = localStorage.getItem("loggedInUser");
 
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedInUser");

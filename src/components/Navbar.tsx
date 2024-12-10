@@ -1,13 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
-import {
-  AiOutlinePlayCircle,
-  AiOutlineUser,
-  AiOutlineTrophy,
-} from "react-icons/ai";
+import { AiOutlinePlayCircle, AiOutlineUser } from "react-icons/ai";
 import { FaCrown } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
-import Image from "next/image";
 
 export const Navbar = () => {
   const router = useRouter();
