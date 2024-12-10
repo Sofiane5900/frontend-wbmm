@@ -101,7 +101,7 @@ const Login = () => {
         </form>
         {/* Fake Register :D  */}
         <p className="text-center text-sm mt-6">
-          Don&apos;t miss the action! Join the 4:14 have an account?{" "}
+          Don&apos;t miss the action !{" "}
           <a
             href="/auth/register"
             className="text-yellow-400 hover:text-yellow-300 underline 
