@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PlayerCard } from "@/components/PlayerCard";
 import { mockUsers, User } from "@/mockData/users";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 const Play = () => {
   const [isMatchStarted, setIsMatchStarted] = useState(false); // Track if the match has started
@@ -27,13 +28,17 @@ const Play = () => {
 
   return (
     <div className="h-full w-full  text-white">
+      <Navbar />
       {!isMatchStarted ? (
-        <div className="queue-screen flex flex-col items-center  to-black p-10 min-h-screen">
-          <h1 className="text-5xl font-extrabold mb-10 text-gray-100">
-            Queue Lobby <span className="text-green-400">(12 Players)</span>
-          </h1>
+        <div className="flex  flex-col items-center  to-black p-10 min-h-screen">
+          <h3 className="text-4xl mb-10 text-gray-100">
+            <span className="text-green-400">12/12 PLAYERS IN THE LOBBY</span>
+          </h3>
 
-          <div className="grid grid-cols-6 gap-6 mb-12 max-w-6xl">
+          <div
+            className="grid p-20 border-2 border-yellow-400 grid-cols-6 gap-6 mb-12"
+            style={{ background: "#161616" }}
+          >
             {Array(12)
               .fill(null)
               .map((_, index) => (
@@ -43,13 +48,13 @@ const Play = () => {
 
           <button
             onClick={launchMatch}
-            className="px-16 py-5 bg-green-600 text-2xl  w-full shadow-lg hover:bg-green-700 hover:scale-105  transition-transform duration-200"
+            className=" py-5 bg-green-600 text-2xl w-full shadow-lg hover:bg-green-700 hover:scale-105  transition-transform duration-200"
           >
             Launch Match
           </button>
         </div>
       ) : (
-        <div className="match-screen p-8">
+        <div className="p-8">
           <div className="bg-gradient-to-r from-green-500 via-blue-600 to-purple-500 p-6 rounded-lg shadow-lg text-center mb-8">
             <h1 className="text-4xl font-extrabold">{server}</h1>
             <h2>{map}</h2>

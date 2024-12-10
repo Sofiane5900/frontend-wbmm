@@ -73,10 +73,8 @@ export const PlayerCard: React.FC<PlayerCardProps> = ({ user }) => {
         <div className="text-center text-sm text-white mt-2 px-2">
           <p className="text-xs">MMR: {user.MMR}</p>
           <p className="text-xs">K/D: {user.KD.toFixed(1)}</p>
-          <p
-            className={`text-xs ${user.MMR > 1500 ? "text-green-400" : "text-yellow-400"}`}
-          >
-            Status: {user.MMR > 1500 ? "Ready" : "Not Ready"}
+          <p className={`text-xs ${user.MMR && "text-green-400"}`}>
+            Status: {user.MMR && "Ready"}
           </p>
         </div>
       )}
